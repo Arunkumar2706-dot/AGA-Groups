@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore AGA Groups portfolio — residential, commercial, interior, and renovation projects across India.">
+  <meta property="og:title" content="Projects | AGA Groups">
+  <title>Projects | AGA Groups</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="projects" class="no-scroll">
+
+  <div id="loader" class="loader">
+    <div class="loader__logo">AGA <span style="color:#fff">GROUPS</span></div>
+    <div class="loader__bar"></div>
+  </div>
+
+  <header id="navbar" class="navbar navbar--scrolled">
+    <div class="container">
+      <a href="index.html" class="navbar__logo">
+        <img src="images/logo.svg" alt="AGA Groups" width="40" height="40">
+        AGA <span>Groups</span>
+      </a>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-menu" class="nav-menu">
+        <a href="index.html" class="nav-link" data-nav="home">Home</a>
+        <a href="about.html" class="nav-link" data-nav="about">About</a>
+        <a href="services.html" class="nav-link" data-nav="services">Services</a>
+        <a href="projects.html" class="nav-link" data-nav="projects">Projects</a>
+        <a href="showcase.html" class="nav-link" data-nav="showcase">3D Showcase</a>
+        <a href="contact.html" class="nav-link" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <div id="nav-overlay" class="nav-overlay"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">Our Projects</h1>
+        <p class="page-hero__breadcrumb"><a href="index.html">Home</a> / Projects</p>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section">
+      <div class="container">
+        <div class="section__header" data-aos="fade-up">
+          <span class="section__label">Portfolio</span>
+          <h2 class="section__title">Project Gallery</h2>
+          <p class="section__subtitle">Browse our completed works across different categories.</p>
+        </div>
+
+        <div class="filter-bar" data-aos="fade-up">
+          <button class="filter-btn filter-btn--active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="residential">Residential</button>
+          <button class="filter-btn" data-filter="commercial">Commercial</button>
+          <button class="filter-btn" data-filter="interior">Interior</button>
+          <button class="filter-btn" data-filter="renovation">Renovation</button>
+        </div>
+
+        <div class="project-gallery">
+          <div class="project-item" data-id="1" data-category="residential" data-aos="zoom-in">
+            <img src="images/projects/project-1.jpg" alt="Skyline Residences" loading="lazy">
+            <div class="project-item__overlay">
+              <h3 class="project-item__title">Skyline Residences</h3>
+              <span class="project-item__category">Residential</span>
+              <span class="project-item__view"><i class="fas fa-search-plus"></i> View Details</span>
+            </div>
+          </div>
+          <div class="project-item" data-id="2" data-category="commercial" data-aos="zoom-in">
+            <img src="images/projects/project-2.jpg" alt="Corporate Hub Tower" loading="lazy">
+            <div class="project-item__overlay">
+              <h3 class="project-item__title">Corporate Hub Tower</h3>
+              <span class="project-item__category">Commercial</span>
+              <span class="project-item__view"><i class="fas fa-search-plus"></i> View Details</span>
+            </div>
+          </div>
+          <div class="project-item" data-id="3" data-category="interior" data-aos="zoom-in">
+            <img src="images/projects/project-3.jpg" alt="Luxury Villa Interior" loading="lazy">
+            <div class="project-item__overlay">
+              <h3 class="project-item__title">Luxury Villa Interior</h3>
+              <span class="project-item__category">Interior</span>
+              <span class="project-item__view"><i class="fas fa-search-plus"></i> View Details</span>
+            </div>
+          </div>
+          <div class="project-item" data-id="4" data-category="renovation" data-aos="zoom-in">
+            <img src="images/projects/project-4.jpg" alt="Heritage Home Renovation" loading="lazy">
+            <div class="project-item__overlay">
+              <h3 class="project-item__title">Heritage Home Renovation</h3>
+              <span class="project-item__category">Renovation</span>
+              <span class="project-item__view"><i class="fas fa-search-plus"></i> View Details</span>
+            </div>
+          </div>
+          <div class="project-item" data-id="5" data-category="residential" data-aos="zoom-in">
+            <img src="images/projects/project-5.jpg" alt="Green Valley Apartments" loading="lazy">
+            <div class="project-item__overlay">
+              <h3 class="project-item__title">Green Valley Apartments</h3>
+              <span class="project-item__category">Residential</span>
+              <span class="project-item__view"><i class="fas fa-search-plus"></i> View Details</span>
+            </div>
+          </div>
+          <div class="project-item" data-id="6" data-category="commercial" data-aos="zoom-in">
+            <img src="images/projects/project-6.jpg" alt="Metro Business Park" loading="lazy">
+            <div class="project-item__overlay">
+              <h3 class="project-item__title">Metro Business Park</h3>
+              <span class="project-item__category">Commercial</span>
+              <span class="project-item__view"><i class="fas fa-search-plus"></i> View Details</span>
+            </div>
+          </div>
+          <div class="project-item" data-id="7" data-category="interior" data-aos="zoom-in">
+            <img src="images/projects/project-7.jpg" alt="Boutique Hotel Interior" loading="lazy">
+            <div class="project-item__overlay">
+              <h3 class="project-item__title">Boutique Hotel Interior</h3>
+              <span class="project-item__category">Interior</span>
+              <span class="project-item__view"><i class="fas fa-search-plus"></i> View Details</span>
+            </div>
+          </div>
+          <div class="project-item" data-id="8" data-category="renovation" data-aos="zoom-in">
+            <img src="images/projects/project-8.jpg" alt="Industrial Warehouse Upgrade" loading="lazy">
+            <div class="project-item__overlay">
+              <h3 class="project-item__title">Industrial Warehouse Upgrade</h3>
+              <span class="project-item__category">Renovation</span>
+              <span class="project-item__view"><i class="fas fa-search-plus"></i> View Details</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before & After -->
+    <section class="section section--gray">
+      <div class="container">
+        <div class="section__header" data-aos="fade-up">
+          <span class="section__label">Transformations</span>
+          <h2 class="section__title">Before & After</h2>
+          <p class="section__subtitle">Drag the slider to see the remarkable transformations we've achieved.</p>
+        </div>
+        <div class="ba-grid">
+          <div class="ba-slider" data-aos="fade-up">
+            <img src="images/before-after/before-1.jpg" alt="Before renovation">
+            <img class="ba-after" src="images/before-after/after-1.jpg" alt="After renovation">
+            <span class="ba-label ba-label--before">Before</span>
+            <span class="ba-label ba-label--after">After</span>
+            <div class="ba-handle"></div>
+            <input type="range" class="ba-input" min="0" max="100" value="50" aria-label="Before after comparison">
+          </div>
+          <div class="ba-slider" data-aos="fade-up" data-aos-delay="200">
+            <img src="images/before-after/before-2.jpg" alt="Before renovation">
+            <img class="ba-after" src="images/before-after/after-2.jpg" alt="After renovation">
+            <span class="ba-label ba-label--before">Before</span>
+            <span class="ba-label ba-label--after">After</span>
+            <div class="ba-handle"></div>
+            <input type="range" class="ba-input" min="0" max="100" value="50" aria-label="Before after comparison">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Project Modal -->
+  <div id="project-modal" class="modal">
+    <div id="modal-overlay" class="modal__overlay"></div>
+    <div class="modal__content">
+      <button id="modal-close" class="modal__close" aria-label="Close modal"><i class="fas fa-times"></i></button>
+      <img id="modal-image" class="modal__image" src="" alt="">
+      <div class="modal__body">
+        <span id="modal-category" class="modal__badge">Category</span>
+        <h2 id="modal-title" class="modal__title">Project Title</h2>
+        <p id="modal-description" class="modal__description">Description</p>
+        <div class="modal__meta">
+          <div class="modal__meta-item"><span>Client</span><strong id="modal-client">—</strong></div>
+          <div class="modal__meta-item"><span>Year</span><strong id="modal-year">—</strong></div>
+          <div class="modal__meta-item"><span>Location</span><strong id="modal-location">—</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">AGA <span>Groups</span></div>
+          <p class="footer__about">Building excellence and creating landmarks across India.</p>
+          <div class="footer__social">
+            <a href="#" data-social="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" data-social="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" data-social="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" data-social="twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="showcase.html">3D Showcase</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Services</h4>
+          <ul class="footer__links">
+            <li><a href="services.html">Residential</a></li>
+            <li><a href="services.html">Commercial</a></li>
+            <li><a href="services.html">Interior Design</a></li>
+            <li><a href="services.html">Renovation</a></li>
+            <li><a href="services.html">Project Management</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Contact</h4>
+          <ul class="footer__contact">
+            <li><i class="fas fa-map-marker-alt"></i> <span data-config="address">Address</span></li>
+            <li><i class="fas fa-phone"></i> <a href="#" data-config="phone">Phone</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="#" data-config="email">Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 <span data-config="company">AGA Groups</span>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a id="whatsapp-float" class="whatsapp-float" href="#"><i class="fab fa-whatsapp"></i></a>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

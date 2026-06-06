@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact AGA Groups for construction inquiries, free quotes, and project consultations.">
+  <meta property="og:title" content="Contact | AGA Groups">
+  <title>Contact | AGA Groups</title>
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact" class="no-scroll">
+
+  <div id="loader" class="loader">
+    <div class="loader__logo">AGA <span style="color:#fff">GROUPS</span></div>
+    <div class="loader__bar"></div>
+  </div>
+
+  <header id="navbar" class="navbar navbar--scrolled">
+    <div class="container">
+      <a href="index.html" class="navbar__logo">
+        <img src="images/logo.svg" alt="AGA Groups" width="40" height="40">
+        AGA <span>Groups</span>
+      </a>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-menu" class="nav-menu">
+        <a href="index.html" class="nav-link" data-nav="home">Home</a>
+        <a href="about.html" class="nav-link" data-nav="about">About</a>
+        <a href="services.html" class="nav-link" data-nav="services">Services</a>
+        <a href="projects.html" class="nav-link" data-nav="projects">Projects</a>
+        <a href="showcase.html" class="nav-link" data-nav="showcase">3D Showcase</a>
+        <a href="contact.html" class="nav-link" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <div id="nav-overlay" class="nav-overlay"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">Contact Us</h1>
+        <p class="page-hero__breadcrumb"><a href="index.html">Home</a> / Contact</p>
+      </div>
+    </section>
+
+    <section id="quote" class="section">
+      <div class="container">
+        <div class="section__header" data-aos="fade-up">
+          <span class="section__label">Get In Touch</span>
+          <h2 class="section__title">Let's Build Together</h2>
+          <p class="section__subtitle">Fill out the form below and our team will get back to you within 24 hours.</p>
+        </div>
+
+        <div class="contact-grid">
+          <form id="contact-form" class="contact-form" data-aos="fade-right" novalidate>
+            <!-- Formspree: reply-to, subject, honeypot -->
+            <input type="hidden" name="_subject" value="New inquiry from AGA Groups website">
+            <input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required>
+              <span class="form-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+              <span class="form-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 63830 13232" required>
+              <span class="form-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+              <span class="form-error"></span>
+            </div>
+            <button type="submit" class="btn btn--primary">Send Message</button>
+            <div id="form-toast" class="form-toast" role="alert"></div>
+          </form>
+
+          <div class="contact-info" data-aos="fade-left">
+            <div class="info-card">
+              <div class="info-card__icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <div class="info-card__title">Phone</div>
+                <div class="info-card__value"><a href="#" data-config="phone">Phone</a></div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card__icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <div class="info-card__title">Email</div>
+                <div class="info-card__value"><a href="#" data-config="email">Email</a></div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card__icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <div class="info-card__title">Office Address</div>
+                <div class="info-card__value" data-config="address">Address</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card__icon"><i class="fas fa-clock"></i></div>
+              <div>
+                <div class="info-card__title">Business Hours</div>
+                <div class="info-card__value" data-config="hours">Hours</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-container" data-aos="fade-up">
+          <iframe data-config="maps" title="AGA Groups office location" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">AGA <span>Groups</span></div>
+          <p class="footer__about">Building excellence and creating landmarks across India.</p>
+          <div class="footer__social">
+            <a href="#" data-social="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" data-social="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" data-social="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" data-social="twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="showcase.html">3D Showcase</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Services</h4>
+          <ul class="footer__links">
+            <li><a href="services.html">Residential</a></li>
+            <li><a href="services.html">Commercial</a></li>
+            <li><a href="services.html">Interior Design</a></li>
+            <li><a href="services.html">Renovation</a></li>
+            <li><a href="services.html">Project Management</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Contact</h4>
+          <ul class="footer__contact">
+            <li><i class="fas fa-map-marker-alt"></i> <span data-config="address">Address</span></li>
+            <li><i class="fas fa-phone"></i> <a href="#" data-config="phone">Phone</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="#" data-config="email">Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 <span data-config="company">AGA Groups</span>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a id="whatsapp-float" class="whatsapp-float" href="#"><i class="fab fa-whatsapp"></i></a>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
