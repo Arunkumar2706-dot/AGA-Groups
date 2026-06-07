@@ -13,10 +13,10 @@ const SITE_CONFIG = {
   phone: '+91 63830 13232',
   whatsapp: '916383013232',
   // Update these when you have the details
-  email: 'info@agagroups.com',
-  address: 'Office address — coming soon',
-  mapsEmbedUrl:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.734623456789!2d72.8777!3d19.076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA0JzMzLjYiTiA3MsKwNTInMzkuNyJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin',
+  email: 'agagroupshosur@gmail.com',
+  address: "AGA Groups, Hosur, Tamil Nadu, India — 12°46'01.4\"N 77°50'16.2\"E",
+  mapsLink: 'https://maps.app.goo.gl/qeUVk95mjjKewhaf8',
+  mapsEmbedUrl: 'https://maps.google.com/maps?ll=12.767061,77.837836&z=17&output=embed',
   businessHours: 'Mon – Sat: 9:00 AM – 6:00 PM',
   social: {
     facebook: '#',
@@ -41,7 +41,7 @@ const PROJECTS_DATA = [
     id: 1,
     title: 'Skyline Residences',
     category: 'residential',
-    image: 'images/projects/project-1.jpg',
+    image: 'images/projects/project-1.jpeg',
     description:
       'A premium 24-story residential tower featuring modern amenities, sustainable design, and panoramic city views. Completed with precision engineering and luxury finishes.',
     client: 'Skyline Developers',
@@ -52,7 +52,7 @@ const PROJECTS_DATA = [
     id: 2,
     title: 'Corporate Hub Tower',
     category: 'commercial',
-    image: 'images/projects/project-2.jpg',
+    image: 'images/projects/project-2.jpeg',
     description:
       'State-of-the-art commercial office complex with 50,000 sq ft of leasable space, smart building systems, and LEED-certified green architecture.',
     client: 'TechCorp Industries',
@@ -63,7 +63,7 @@ const PROJECTS_DATA = [
     id: 3,
     title: 'Luxury Villa Interior',
     category: 'interior',
-    image: 'images/projects/project-3.jpg',
+    image: 'images/projects/project-3.jpeg',
     description:
       'Complete interior transformation of a 5-bedroom luxury villa with bespoke furniture, Italian marble flooring, and smart home integration.',
     client: 'Private Client',
@@ -74,7 +74,7 @@ const PROJECTS_DATA = [
     id: 4,
     title: 'Heritage Home Renovation',
     category: 'renovation',
-    image: 'images/projects/project-4.jpg',
+    image: 'images/projects/project-4.jpeg',
     description:
       'Careful restoration and modernization of a century-old heritage property, preserving architectural character while adding contemporary comforts.',
     client: 'Heritage Trust',
@@ -85,7 +85,7 @@ const PROJECTS_DATA = [
     id: 5,
     title: 'Green Valley Apartments',
     category: 'residential',
-    image: 'images/projects/project-5.jpg',
+    image: 'images/projects/project-5.jpeg',
     description:
       'Eco-friendly apartment complex with solar panels, rainwater harvesting, and landscaped gardens across 3 acres of premium living space.',
     client: 'Green Valley Estates',
@@ -96,7 +96,7 @@ const PROJECTS_DATA = [
     id: 6,
     title: 'Metro Business Park',
     category: 'commercial',
-    image: 'images/projects/project-6.jpg',
+    image: 'images/projects/project-6.jpeg',
     description:
       'Multi-building business park with retail spaces, co-working zones, and underground parking for 500+ vehicles.',
     client: 'Metro Holdings',
@@ -107,7 +107,7 @@ const PROJECTS_DATA = [
     id: 7,
     title: 'Boutique Hotel Interior',
     category: 'interior',
-    image: 'images/projects/project-7.jpg',
+    image: 'images/projects/project-7.jpeg',
     description:
       'Elegant boutique hotel interior design featuring locally sourced materials, artisan craftsmanship, and ambient lighting throughout 45 rooms.',
     client: 'Boutique Stays Ltd',
@@ -117,8 +117,7 @@ const PROJECTS_DATA = [
   {
     id: 8,
     title: 'Industrial Warehouse Upgrade',
-    category: 'renovation',
-    image: 'images/projects/project-8.jpg',
+    image: 'images/projects/project-8.jpeg',
     description:
       'Complete structural reinforcement and modernization of a 100,000 sq ft industrial warehouse with upgraded logistics infrastructure.',
     client: 'LogiFlow Corp',
@@ -173,7 +172,14 @@ function injectSiteConfig() {
   });
 
   document.querySelectorAll('[data-config="address"]').forEach((el) => {
-    el.textContent = SITE_CONFIG.address;
+    if (el.tagName === 'A') {
+      el.textContent = SITE_CONFIG.address;
+      el.href = SITE_CONFIG.mapsLink;
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener noreferrer');
+    } else {
+      el.textContent = SITE_CONFIG.address;
+    }
   });
 
   document.querySelectorAll('[data-config="hours"]').forEach((el) => {
@@ -182,6 +188,13 @@ function injectSiteConfig() {
 
   document.querySelectorAll('[data-config="maps"]').forEach((el) => {
     if (el.tagName === 'IFRAME') el.src = SITE_CONFIG.mapsEmbedUrl;
+  });
+
+  // Set any elements that should open the maps link (address anchors, buttons)
+  document.querySelectorAll('[data-config-mapslink]').forEach((el) => {
+    el.href = SITE_CONFIG.mapsLink;
+    el.setAttribute('target', '_blank');
+    el.setAttribute('rel', 'noopener noreferrer');
   });
 
   const socialLinks = {
@@ -719,6 +732,7 @@ function initShowcase() {
 
   scene.add(buildingGroup);
 
+
   let controls;
   if (typeof THREE.OrbitControls !== 'undefined') {
     controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -746,6 +760,8 @@ function initShowcase() {
 
     goldLight.intensity = 0.6 + Math.sin(time) * 0.2;
 
+    
+
     controls?.update();
     renderer.render(scene, camera);
   };
@@ -761,4 +777,9 @@ function initShowcase() {
   renderer.domElement.addEventListener('mousedown', () => {
     if (controls) controls.autoRotate = false;
   });
+
+  
 }
+
+// Opens a modal with a Three.js view of a single project image
+

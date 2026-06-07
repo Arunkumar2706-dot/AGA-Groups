@@ -399,6 +399,9 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.6);
 }
 
+/* --- Project 3D Modal --- */
+
+
 .page-hero__breadcrumb a {
   color: var(--color-gold);
 }
@@ -922,6 +925,8 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--shadow-sm);
   transition: all var(--transition);
 }
+/* limit card width and center */
+.team-card { max-width: 760px; margin-left: auto; margin-right: auto; }
 
 .team-card:hover {
   transform: translateY(-6px);
@@ -929,14 +934,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .team-card__image {
-  height: 280px;
+  height: 200px;
   overflow: hidden;
+}
+
+.team-card__image .avatar-placeholder {
+  width: 120px;
+  height: 120px;
+  margin: 36px auto 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1.25rem;
+  box-shadow: 0 8px 24px rgba(10,22,40,0.08);
 }
 
 .team-card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* prefer showing upper part of portrait photos */
+  object-position: center 25%;
   transition: transform 0.5s ease;
 }
 
