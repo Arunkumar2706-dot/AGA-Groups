@@ -16,7 +16,7 @@
   --color-gold-dark: #a8861f;
 
   --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --shadow-sm: 0 2px 8px rgba(10, 22, 40, 0.08);
   --shadow-md: 0 8px 24px rgba(10, 22, 40, 0.12);
@@ -2044,4 +2044,235 @@ h1, h2, h3, h4, h5, h6 {
 
 .star-rating i:hover {
   transform: scale(1.1);
+}
+
+/* ============================================
+   PREMIUM DARK MODE OVERRIDES (LUXURY THEME)
+   ============================================ */
+[data-theme="dark"] {
+  --color-primary: #0F172A; /* Rich deep slate/navy */
+  --color-primary-light: #1E293B; /* Lighter slate */
+  --color-bg: #0F172A;
+  --color-text: #F8FAFC;
+  --color-text-muted: #CBD5E1; /* Much lighter muted text for better visibility */
+  --color-card-bg: rgba(255, 255, 255, 0.05); /* Slightly more visible glassmorphism */
+  --color-card-border: rgba(255, 255, 255, 0.1);
+  --shadow-premium: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Force global text colors so NOTHING is invisible */
+[data-theme="dark"] body {
+  background-color: var(--color-bg) !important;
+  color: var(--color-text-muted) !important;
+}
+
+[data-theme="dark"] body * {
+  color: inherit; /* inherit light text by default */
+}
+
+[data-theme="dark"] .section--gray {
+  background-color: #0B1121 !important;
+}
+
+/* Typography & Headings */
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6, [data-theme="dark"] .section__title, [data-theme="dark"] .hero__title, [data-theme="dark"] .title, [data-theme="dark"] strong, [data-theme="dark"] b, [data-theme="dark"] .heading, [data-theme="dark"] .project-detail__title, [data-theme="dark"] .stat-card__number, [data-theme="dark"] .testimonial-card__text, [data-theme="dark"] .info-card__value, [data-theme="dark"] .info-card__title, [data-theme="dark"] .form-group label, [data-theme="dark"] .form-label {
+  color: #ffffff !important;
+}
+
+/* Make form placeholders legible */
+[data-theme="dark"] .form-input::placeholder, [data-theme="dark"] .form-textarea::placeholder, [data-theme="dark"] .form-group input::placeholder, [data-theme="dark"] .form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Explicit exceptions where text MUST be dark/gold */
+[data-theme="dark"] .btn, [data-theme="dark"] .btn *, [data-theme="dark"] .btn--primary, [data-theme="dark"] .btn--primary * {
+  color: #000000 !important;
+}
+[data-theme="dark"] .btn--outline, [data-theme="dark"] .btn--outline * {
+  color: var(--color-gold) !important;
+}
+[data-theme="dark"] .nav__link:hover, [data-theme="dark"] .nav__link--active, [data-theme="dark"] .footer__link:hover {
+  color: var(--color-gold) !important;
+}
+
+/* Navigation - Glassmorphism */
+[data-theme="dark"] .nav {
+  background: rgba(15, 23, 42, 0.85) !important;
+  backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid var(--color-card-border) !important;
+}
+[data-theme="dark"] .nav__link {
+  color: var(--color-text) !important;
+}
+
+/* Cards (Services, Projects, Team, Testimonials, Form, etc.) */
+[data-theme="dark"] .service-card, [data-theme="dark"] .project-card, [data-theme="dark"] .team-card, [data-theme="dark"] .testimonial-card, [data-theme="dark"] .stat-card, [data-theme="dark"] .cert-card, [data-theme="dark"] .post-card, [data-theme="dark"] .review-form-container, [data-theme="dark"] .mv-card, [data-theme="dark"] .timeline-item__content, [data-theme="dark"] .contact-form, [data-theme="dark"] .info-card, [data-theme="dark"] .dropdown, [data-theme="dark"] .dropdown__menu, [data-theme="dark"] .blog-card, [data-theme="dark"] .sidebar-widget, [data-theme="dark"] .property-card, [data-theme="dark"] .ba-slider, [data-theme="dark"] .showcase-wrapper, [data-theme="dark"] .accordion-item {
+  background: var(--color-card-bg) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid var(--color-card-border) !important;
+  box-shadow: var(--shadow-premium) !important;
+}
+
+/* Elevate on Hover */
+[data-theme="dark"] .service-card:hover, [data-theme="dark"] .project-card:hover, [data-theme="dark"] .team-card:hover, [data-theme="dark"] .post-card:hover, [data-theme="dark"] .mv-card:hover, [data-theme="dark"] .info-card:hover {
+  border-color: rgba(212, 175, 55, 0.5) !important;
+  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.15) !important;
+}
+
+/* Images & Overlays */
+[data-theme="dark"] .team-card__image {
+  background-color: rgba(255,255,255,0.05) !important;
+}
+[data-theme="dark"] .project-card__overlay, [data-theme="dark"] .project-item__overlay {
+  background: rgba(15, 23, 42, 0.9) !important;
+}
+
+/* Modal */
+[data-theme="dark"] .modal__content {
+  background: var(--color-primary-light) !important;
+  border: 1px solid var(--color-card-border) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Buttons */
+[data-theme="dark"] .btn--primary {
+  background: var(--color-gold) !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3) !important;
+  border: none !important;
+}
+[data-theme="dark"] .btn--outline {
+  border-color: var(--color-gold) !important;
+}
+[data-theme="dark"] .btn--outline:hover {
+  background: var(--color-gold) !important;
+}
+
+/* Footer */
+[data-theme="dark"] .footer {
+  background: #0B1121 !important;
+  border-top: 1px solid var(--color-card-border) !important;
+}
+
+/* Forms */
+[data-theme="dark"] .form-input, [data-theme="dark"] .form-textarea, [data-theme="dark"] .form-group input, [data-theme="dark"] .form-group textarea, [data-theme="dark"] .ba-label {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid var(--color-card-border) !important;
+  color: #ffffff !important;
+}
+[data-theme="dark"] .form-input:focus, [data-theme="dark"] .form-textarea:focus, [data-theme="dark"] .form-group input:focus, [data-theme="dark"] .form-group textarea:focus {
+  border-color: var(--color-gold) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1) !important;
+}
+
+/* Filter Buttons */
+[data-theme="dark"] .filter-btn {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: var(--color-card-border) !important;
+}
+[data-theme="dark"] .filter-btn:hover, [data-theme="dark"] .filter-btn--active {
+  background: var(--color-gold) !important;
+  border-color: var(--color-gold) !important;
+}
+[data-theme="dark"] .filter-btn:hover, [data-theme="dark"] .filter-btn--active, [data-theme="dark"] .filter-btn:hover *, [data-theme="dark"] .filter-btn--active * {
+  color: #000 !important;
+}
+
+/* Ensure Icons Keep Gold */
+[data-theme="dark"] i, [data-theme="dark"] .fas, [data-theme="dark"] .far, [data-theme="dark"] .fab, [data-theme="dark"] .info-card__icon, [data-theme="dark"] .mv-card__icon, [data-theme="dark"] .service-card__icon, [data-theme="dark"] .star-rating i {
+  color: var(--color-gold) !important;
+}
+
+/* ============================================
+   THEME TOGGLE STYLES
+   ============================================ */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--color-gray-800);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--color-gold);
+  background: rgba(212, 175, 55, 0.1);
+}
+
+[data-theme="dark"] .theme-toggle {
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  color: var(--color-gold);
+  background: rgba(212, 175, 55, 0.2);
+}
+
+/* ============================================
+   PREMIUM ANIMATIONS & MICRO-INTERACTIONS
+   ============================================ */
+
+/* 1. Slow Cinematic Zoom for Hero Backgrounds */
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
+.hero__bg {
+  animation: slowZoom 25s ease-in-out infinite alternate;
+}
+
+/* 2. Premium Shimmer Effect for Gold Buttons */
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+.btn--primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn--primary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg);
+  animation: shimmer 4s infinite;
+  z-index: 1;
+}
+
+/* 3. Subtle Pulse Glow for Stat Cards & Buttons */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+.stat-card:hover .stat-card__icon, .btn--primary:hover {
+  animation: pulseGlow 1.5s infinite;
+  border-radius: 50%;
+}
+.btn--primary:hover {
+  border-radius: var(--radius-sm); /* Keep button shape */
+}
+
+/* 4. Elegant Floating Effect for Icons */
+@keyframes floatIcon {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+.info-card:hover .info-card__icon, .service-card:hover .service-card__icon {
+  animation: floatIcon 2s ease-in-out infinite;
+}
+
+/* 5. Smooth Glow Transition Enhancement for Cards */
+.service-card, .project-card, .team-card, .testimonial-card, .stat-card, .cert-card, .post-card, .review-form-container, .mv-card, .timeline-item__content, .contact-form, .info-card, .dropdown, .dropdown__menu, .blog-card, .sidebar-widget, .property-card, .ba-slider, .showcase-wrapper, .accordion-item {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease, border-color 0.5s ease !important;
 }

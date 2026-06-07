@@ -127,9 +127,18 @@ const PROJECTS_DATA = [
 ];
 
 /* ============================================
+   THEME INITIALIZATION
+   ============================================ */
+(function initTheme() {
+  const savedTheme = localStorage.getItem('aga_theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+})();
+
+/* ============================================
    DOM READY — Page Router
    ============================================ */
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   injectSiteConfig();
   initLoader();
   initNavbar();
@@ -138,6 +147,33 @@ document.addEventListener('DOMContentLoaded', () => {
   initAOS();
   initCounters();
   initReviewForm();
+
+function initThemeToggle() {
+  const themeToggleBtns = document.querySelectorAll('.theme-toggle');
+  themeToggleBtns.forEach(btn => {
+    // Set initial icon
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const icon = btn.querySelector('i');
+    if (icon) {
+      icon.className = currentTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+
+    // Toggle event
+    btn.addEventListener('click', () => {
+      let theme = document.documentElement.getAttribute('data-theme');
+      let newTheme = theme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('aga_theme', newTheme);
+      
+      // Update all toggle buttons on the page
+      themeToggleBtns.forEach(b => {
+        const i = b.querySelector('i');
+        if (i) i.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      });
+    });
+  });
+}
 
   const page = document.body.dataset.page;
 
