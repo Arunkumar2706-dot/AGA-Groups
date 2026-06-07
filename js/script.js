@@ -10,7 +10,7 @@ const SITE_CONFIG = {
   companyName: 'AGA Groups',
   tagline: 'Building Excellence, Creating Landmarks',
   // Confirmed contact
-  phone: '+91 63830 13232',
+  phone: '+91 63830 13232, +91 73733 34330',
   whatsapp: '916383013232',
   // Update these when you have the details
   email: 'agagroupshosur@gmail.com',
@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initWhatsApp();
   initAOS();
   initCounters();
+  initReviewForm();
 
   const page = document.body.dataset.page;
 
@@ -163,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function injectSiteConfig() {
   document.querySelectorAll('[data-config="phone"]').forEach((el) => {
     el.textContent = SITE_CONFIG.phone;
-    if (el.tagName === 'A') el.href = `tel:${SITE_CONFIG.phone.replace(/\s/g, '')}`;
+    if (el.tagName === 'A') el.href = `tel:${SITE_CONFIG.phone.split(',')[0].replace(/\s/g, '')}`;
   });
 
   document.querySelectorAll('[data-config="email"]').forEach((el) => {
@@ -376,10 +377,46 @@ function initCounters() {
 /* ============================================
    TESTIMONIALS — Swiper
    ============================================ */
+function createReviewHTML(review) {
+  let starsHtml = '';
+  for(let i = 0; i < review.rating; i++) {
+    starsHtml += '<i class="fas fa-star"></i>';
+  }
+  
+  const initials = review.name.substring(0, 2).toUpperCase();
+  const text = review.message ? `"${review.message}"` : `"Excellent service and highly recommended."`;
+  
+  return `
+    <div class="swiper-slide">
+      <div class="testimonial-card">
+        <div class="testimonial-card__stars">${starsHtml}</div>
+        <p class="testimonial-card__text">${text}</p>
+        <div class="testimonial-card__author">
+          <div class="testimonial-card__avatar">${initials}</div>
+          <div>
+            <div class="testimonial-card__name">${review.name}</div>
+            <div class="testimonial-card__role">Verified Client</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 function initTestimonials() {
   if (typeof Swiper === 'undefined') return;
 
-  new Swiper('.testimonials-swiper', {
+  // Load local reviews
+  const customReviews = JSON.parse(localStorage.getItem('aga_custom_reviews') || '[]');
+  const wrapper = document.querySelector('.testimonials-swiper .swiper-wrapper');
+  
+  if (wrapper && customReviews.length > 0) {
+    customReviews.forEach(review => {
+      wrapper.insertAdjacentHTML('beforeend', createReviewHTML(review));
+    });
+  }
+
+  window.testimonialsSwiper = new Swiper('.testimonials-swiper', {
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
@@ -627,6 +664,80 @@ function showToast(el, message, type) {
   el.textContent = message;
   el.className = `form-toast form-toast--${type} form-toast--visible`;
   setTimeout(() => el.classList.remove('form-toast--visible'), 5000);
+}
+
+/* ============================================
+   REVIEW FORM
+   ============================================ */
+function initReviewForm() {
+  const form = document.getElementById('review-form');
+  const stars = document.querySelectorAll('#star-rating i');
+  const ratingInput = document.getElementById('rating-value');
+  
+  if (!form || !stars.length) return;
+
+  // Initialize stars to gold
+  stars.forEach(s => s.style.color = 'var(--color-gold)');
+
+  stars.forEach(star => {
+    // Hover effects
+    star.addEventListener('mouseenter', () => {
+      const rating = star.dataset.rating;
+      stars.forEach(s => {
+        s.style.color = s.dataset.rating <= rating ? 'var(--color-gold)' : '#ccc';
+      });
+    });
+    
+    // Reset to selected rating on mouse leave
+    star.addEventListener('mouseleave', () => {
+      const currentRating = ratingInput.value;
+      stars.forEach(s => {
+        s.style.color = s.dataset.rating <= currentRating ? 'var(--color-gold)' : '#ccc';
+      });
+    });
+
+    // Click to set rating
+    star.addEventListener('click', () => {
+      ratingInput.value = star.dataset.rating;
+    });
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const toast = document.getElementById('review-toast');
+    
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+    
+    const name = document.getElementById('review-name').value;
+    const message = document.getElementById('review-message').value;
+    const rating = ratingInput.value;
+
+    const newReview = { name, message, rating: parseInt(rating, 10) };
+    
+    // Simulate API call for review submission
+    setTimeout(() => {
+      showToast(toast, 'Thank you for your valuable feedback!', 'success');
+      
+      // Save locally
+      const customReviews = JSON.parse(localStorage.getItem('aga_custom_reviews') || '[]');
+      customReviews.push(newReview);
+      localStorage.setItem('aga_custom_reviews', JSON.stringify(customReviews));
+
+      // Add to Swiper
+      if (window.testimonialsSwiper && typeof window.testimonialsSwiper.appendSlide === 'function') {
+        window.testimonialsSwiper.appendSlide(createReviewHTML(newReview));
+        window.testimonialsSwiper.update();
+      }
+      
+      form.reset();
+      stars.forEach(s => s.style.color = 'var(--color-gold)');
+      ratingInput.value = 5;
+      btn.disabled = false;
+      btn.textContent = 'Submit Review';
+    }, 1000);
+  });
 }
 
 /* ============================================

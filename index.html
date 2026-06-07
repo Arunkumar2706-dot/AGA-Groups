@@ -9,7 +9,7 @@
   <meta property="og:image" content="assets/og-image.jpg">
   <meta property="og:type" content="website">
   <title>AGA Groups | Building Excellence, Creating Landmarks</title>
-  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="images/logo.jpg.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
@@ -22,7 +22,9 @@
 
   <!-- Loader -->
   <div id="loader" class="loader">
-    <div class="loader__logo">AGA <span style="color:#fff">GROUPS</span></div>
+    <img src="images/logo.jpg.png" alt="AGA Groups Logo" width="100" style="margin-bottom: 20px; border-radius: 8px; object-fit: contain;">
+    <div style="color: #fff; font-size: 1.2rem; font-family: var(--font-heading); font-weight: 700; letter-spacing: 2px; margin-bottom: 8px; text-transform: uppercase;">Welcome to</div>
+    <div class="loader__logo" style="margin-bottom: 20px;">AGA <span style="color:#fff">GROUPS</span></div>
     <div class="loader__bar"></div>
   </div>
 
@@ -30,7 +32,7 @@
   <header id="navbar" class="navbar">
     <div class="container">
       <a href="index.html" class="navbar__logo">
-        <img src="images/logo.svg" alt="AGA Groups" width="40" height="40">
+        <img src="images/logo.jpg.png" alt="AGA Groups" width="40" height="40">
         AGA <span>Groups</span>
       </a>
       <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
@@ -82,7 +84,7 @@
             </div>
           </div>
           <div class="intro__image" data-aos="fade-left">
-            <img src="images/intro.jpg" alt="AGA Groups construction team at work" loading="lazy">
+            <img src="images/logo.jpg.png" alt="AGA Groups Logo" style="object-fit: contain; background-color: white; padding: 20px;" loading="lazy">
           </div>
         </div>
       </div>
@@ -158,6 +160,30 @@
       </div>
     </section>
 
+    <!-- Real Estate -->
+    <section class="section">
+      <div class="container">
+        <div class="section__header" data-aos="fade-up">
+          <span class="section__label">Real Estate</span>
+          <h2 class="section__title">Sri Hari Hara Layout</h2>
+          <p class="section__subtitle">Premium Villas & Gated Community</p>
+        </div>
+        <div class="intro" style="margin-top: 40px;">
+          <div class="intro__image" data-aos="fade-right">
+            <img src="images/projects/hari-hara-layout.jpg.jpeg" alt="Sri Hari Hara Layout Entrance Arch" loading="lazy">
+          </div>
+          <div class="intro__text" data-aos="fade-left">
+            <h3 style="margin-bottom: 16px;">Discover Your Dream Home</h3>
+            <p>Welcome to Sri Hari Hara Layout, an exclusive gated community offering premium simplex and duplex villas starting from 69.9 Lakhs. Our properties are designed to provide the perfect blend of luxury, comfort, and security.</p>
+            <p>Located near top CBSE schools, our layout features top-tier amenities including a well-designed entrance arch, secure compound walls, 30 ft concrete roads, separate water connections for each villa, and rainwater drainage systems.</p>
+            <div class="hero__cta" style="justify-content: flex-start; margin-top: 30px; opacity: 1; animation: none; transform: none;">
+              <a href="https://wa.me/916383013232?text=Hello,%20I%20want%20to%20book%20a%20plot%20in%20Sri%20Hari%20Hara%20Layout." target="_blank" rel="noopener noreferrer" class="btn btn--primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Testimonials -->
     <section class="section section--gray">
       <div class="container">
@@ -221,6 +247,50 @@
             </div>
           </div>
           <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leave a Review -->
+    <section class="section">
+      <div class="container">
+        <div class="section__header" data-aos="fade-up">
+          <span class="section__label">Your Feedback</span>
+          <h2 class="section__title">Leave a Review</h2>
+          <p class="section__subtitle">We value your experience with AGA Groups. Let us know how we did!</p>
+        </div>
+        <div class="review-form-container" data-aos="fade-up">
+          <form id="review-form" class="contact-form">
+            <div class="form-group" style="text-align: center; margin-bottom: 30px;">
+              <label style="display: block; font-weight: 600; margin-bottom: 10px;">Rate your experience</label>
+              <div class="star-rating" id="star-rating">
+                <i class="fas fa-star" data-rating="1"></i>
+                <i class="fas fa-star" data-rating="2"></i>
+                <i class="fas fa-star" data-rating="3"></i>
+                <i class="fas fa-star" data-rating="4"></i>
+                <i class="fas fa-star" data-rating="5"></i>
+              </div>
+              <input type="hidden" name="rating" id="rating-value" value="5">
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="review-name" class="form-label">Full Name</label>
+                <input type="text" id="review-name" name="name" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label for="review-email" class="form-label">Email Address</label>
+                <input type="email" id="review-email" name="email" class="form-input" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="review-message" class="form-label">Your Review (Optional)</label>
+              <textarea id="review-message" name="message" class="form-textarea" rows="4"></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn--primary">Submit Review</button>
+              <div id="review-toast" class="form-toast"></div>
+            </div>
+          </form>
         </div>
       </div>
     </section>
