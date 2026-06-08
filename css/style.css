@@ -1729,6 +1729,12 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-3px);
 }
 
+.footer i.fa-phone, 
+.footer i.fa-phone-alt {
+  display: inline-block;
+  transform: scaleX(-1);
+}
+
 .footer__heading {
   font-family: var(--font-body);
   font-size: 0.85rem;
