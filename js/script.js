@@ -10,7 +10,7 @@ const SITE_CONFIG = {
   companyName: 'AGA Groups',
   tagline: 'Building Excellence, Creating Landmarks',
   // Confirmed contact
-  phone: '+91 63830 13232, +91 73733 34330',
+  phone: '+91 63830 13232 | +91 73733 34330',
   whatsapp: '916383013232',
   // Update these when you have the details
   email: 'agagroupshosur@gmail.com',
@@ -200,7 +200,7 @@ function initThemeToggle() {
 function injectSiteConfig() {
   document.querySelectorAll('[data-config="phone"]').forEach((el) => {
     el.textContent = SITE_CONFIG.phone;
-    if (el.tagName === 'A') el.href = `tel:${SITE_CONFIG.phone.split(',')[0].replace(/\s/g, '')}`;
+    if (el.tagName === 'A') el.href = `tel:${SITE_CONFIG.phone.split('|')[0].replace(/[^0-9+]/g, '')}`;
   });
 
   document.querySelectorAll('[data-config="email"]').forEach((el) => {
