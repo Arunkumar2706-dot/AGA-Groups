@@ -199,8 +199,16 @@ function initThemeToggle() {
    ============================================ */
 function injectSiteConfig() {
   document.querySelectorAll('[data-config="phone"]').forEach((el) => {
-    el.textContent = SITE_CONFIG.phone;
-    if (el.tagName === 'A') el.href = `tel:${SITE_CONFIG.phone.split('|')[0].replace(/[^0-9+]/g, '')}`;
+    const phones = SITE_CONFIG.phone.split('|').map(p => p.trim());
+    if (el.tagName === 'A') {
+      const linksHtml = phones.map(p => {
+        const tel = p.replace(/[^0-9+]/g, '');
+        return `<a href="tel:${tel}" style="display: block; margin-bottom: 4px; transition: color var(--transition);">${p}</a>`;
+      }).join('');
+      el.outerHTML = `<div class="phone-wrapper" style="display: inline-block; width: 100%;">${linksHtml}</div>`;
+    } else {
+      el.innerHTML = phones.join('<br>');
+    }
   });
 
   document.querySelectorAll('[data-config="email"]').forEach((el) => {
