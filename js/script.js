@@ -16,7 +16,7 @@ const SITE_CONFIG = {
   email: 'agagroupshosur@gmail.com',
   address: "AGA Groups, Hosur, Tamil Nadu, India — 12°46'01.4\"N 77°50'16.2\"E",
   mapsLink: 'https://maps.app.goo.gl/qeUVk95mjjKewhaf8',
-  mapsEmbedUrl: 'https://maps.google.com/maps?ll=12.767061,77.837836&z=17&output=embed',
+  mapsEmbedUrl: 'https://maps.google.com/maps?q=12.767061,77.837836&z=17&output=embed',
   businessHours: 'Mon – Sat: 9:00 AM – 6:00 PM',
   social: {
     facebook: '#',
@@ -223,7 +223,7 @@ function injectSiteConfig() {
       el.setAttribute('target', '_blank');
       el.setAttribute('rel', 'noopener noreferrer');
     } else {
-      el.textContent = SITE_CONFIG.address;
+      el.innerHTML = `<a href="${SITE_CONFIG.mapsLink}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--color-gold)'" onmouseout="this.style.color='inherit'">${SITE_CONFIG.address}</a>`;
     }
   });
 
