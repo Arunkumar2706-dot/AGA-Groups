@@ -35,9 +35,12 @@
         <img src="images/logo.jpg.png" alt="AGA Groups" width="40" height="40">
         AGA <span>Groups</span>
       </a>
-      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+      <div style="display: flex; align-items: center; gap: 10px; z-index: 1001;">
+        <button class="theme-toggle" aria-label="Toggle Theme" style="color: white; margin: 0;"><i class="fas fa-sun"></i></button>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
       <nav id="nav-menu" class="nav-menu">
         <a href="index.html" class="nav-link" data-nav="home">Home</a>
         <a href="about.html" class="nav-link" data-nav="about">About</a>
@@ -45,7 +48,6 @@
         <a href="projects.html" class="nav-link" data-nav="projects">Projects</a>
         <a href="showcase.html" class="nav-link" data-nav="showcase">3D Showcase</a>
         <a href="contact.html" class="nav-link" data-nav="contact">Contact</a>
-        <button class="theme-toggle" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
       </nav>
     </div>
   </header>
@@ -119,7 +121,7 @@
     </section>
 
     <!-- Featured Projects -->
-    <section class="section">
+    <section class="section" style="padding-bottom: 40px;">
       <div class="container">
         <div class="section__header" data-aos="fade-up">
           <span class="section__label">Portfolio</span>
@@ -131,30 +133,15 @@
             <div class="project-card__image">
               <img src="images/projects/project-1.jpeg" alt="Skyline Residences" loading="lazy">
             </div>
-            <div class="project-card__body">
-              <span class="project-card__badge">Residential</span>
-              <h3 class="project-card__title">Skyline Residences</h3>
-              <a href="projects.html" class="project-card__link">View Details <i class="fas fa-arrow-right"></i></a>
-            </div>
           </article>
           <article class="project-card" data-aos="fade-up" data-aos-delay="200">
             <div class="project-card__image">
               <img src="images/projects/project-2.jpeg" alt="Corporate Hub Tower" loading="lazy">
             </div>
-            <div class="project-card__body">
-              <span class="project-card__badge">Commercial</span>
-              <h3 class="project-card__title">Corporate Hub Tower</h3>
-              <a href="projects.html" class="project-card__link">View Details <i class="fas fa-arrow-right"></i></a>
-            </div>
           </article>
           <article class="project-card" data-aos="fade-up" data-aos-delay="300">
             <div class="project-card__image">
               <img src="images/projects/project-3.jpeg" alt="Luxury Villa Interior" loading="lazy">
-            </div>
-            <div class="project-card__body">
-              <span class="project-card__badge">Interior</span>
-              <h3 class="project-card__title">Luxury Villa Interior</h3>
-              <a href="projects.html" class="project-card__link">View Details <i class="fas fa-arrow-right"></i></a>
             </div>
           </article>
         </div>
@@ -162,7 +149,7 @@
     </section>
 
     <!-- Real Estate -->
-    <section class="section">
+    <section class="section" style="padding-top: 40px;">
       <div class="container">
         <div class="section__header" data-aos="fade-up">
           <span class="section__label">Real Estate</span>
@@ -194,58 +181,6 @@
         </div>
         <div class="swiper testimonials-swiper" data-aos="fade-up">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="testimonial-card__text">"AGA Groups delivered our dream home ahead of schedule with impeccable quality. Their attention to detail and professionalism exceeded all our expectations."</p>
-                <div class="testimonial-card__author">
-                  <div class="testimonial-card__avatar">RK</div>
-                  <div>
-                    <div class="testimonial-card__name">Rajesh Kumar</div>
-                    <div class="testimonial-card__role">Homeowner, Mumbai</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="testimonial-card__text">"The commercial tower they built for us is a landmark in Pune. Their project management and communication throughout was outstanding."</p>
-                <div class="testimonial-card__author">
-                  <div class="testimonial-card__avatar">PS</div>
-                  <div>
-                    <div class="testimonial-card__name">Priya Sharma</div>
-                    <div class="testimonial-card__role">CEO, TechCorp Industries</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="testimonial-card__text">"From renovation planning to final handover, AGA Groups handled everything seamlessly. Our heritage property looks stunning while preserving its character."</p>
-                <div class="testimonial-card__author">
-                  <div class="testimonial-card__avatar">AM</div>
-                  <div>
-                    <div class="testimonial-card__name">Amit Mehta</div>
-                    <div class="testimonial-card__role">Property Owner, Jaipur</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-card__stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="testimonial-card__text">"Their interior design team transformed our hotel into a boutique masterpiece. Guests consistently compliment the ambiance and craftsmanship."</p>
-                <div class="testimonial-card__author">
-                  <div class="testimonial-card__avatar">SN</div>
-                  <div>
-                    <div class="testimonial-card__name">Sneha Nair</div>
-                    <div class="testimonial-card__role">Director, Boutique Stays Ltd</div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
           <div class="swiper-pagination"></div>
         </div>

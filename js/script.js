@@ -420,13 +420,15 @@ function createReviewHTML(review) {
   }
   
   const initials = review.name.substring(0, 2).toUpperCase();
-  const text = review.message ? `"${review.message}"` : `"Excellent service and highly recommended."`;
+  const textHtml = review.message && review.message.trim() !== '' 
+    ? `<p class="testimonial-card__text">"${review.message}"</p>` 
+    : '';
   
   return `
     <div class="swiper-slide">
       <div class="testimonial-card">
         <div class="testimonial-card__stars">${starsHtml}</div>
-        <p class="testimonial-card__text">${text}</p>
+        ${textHtml}
         <div class="testimonial-card__author">
           <div class="testimonial-card__avatar">${initials}</div>
           <div>
@@ -452,10 +454,11 @@ function initTestimonials() {
     });
   }
 
+  const isLoop = customReviews.length >= 3;
   window.testimonialsSwiper = new Swiper('.testimonials-swiper', {
     slidesPerView: 1,
     spaceBetween: 30,
-    loop: true,
+    loop: isLoop,
     autoplay: {
       delay: 5000,
       disableOnInteraction: false,
@@ -713,14 +716,14 @@ function initReviewForm() {
   if (!form || !stars.length) return;
 
   // Initialize stars to gold
-  stars.forEach(s => s.style.color = 'var(--color-gold)');
+  stars.forEach(s => s.style.setProperty('color', 'var(--color-gold)', 'important'));
 
   stars.forEach(star => {
     // Hover effects
     star.addEventListener('mouseenter', () => {
       const rating = star.dataset.rating;
       stars.forEach(s => {
-        s.style.color = s.dataset.rating <= rating ? 'var(--color-gold)' : '#ccc';
+        s.style.setProperty('color', s.dataset.rating <= rating ? 'var(--color-gold)' : '#ccc', 'important');
       });
     });
     
@@ -728,7 +731,7 @@ function initReviewForm() {
     star.addEventListener('mouseleave', () => {
       const currentRating = ratingInput.value;
       stars.forEach(s => {
-        s.style.color = s.dataset.rating <= currentRating ? 'var(--color-gold)' : '#ccc';
+        s.style.setProperty('color', s.dataset.rating <= currentRating ? 'var(--color-gold)' : '#ccc', 'important');
       });
     });
 
