@@ -2248,6 +2248,16 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-gold) !important;
 }
 
+[data-theme="dark"] .whatsapp-float i {
+  color: var(--color-white) !important;
+}
+[data-theme="dark"] .back-to-top i {
+  color: var(--color-primary) !important;
+}
+[data-theme="dark"] .phone-float i {
+  color: var(--color-gold) !important;
+}
+
 /* ============================================
    THEME TOGGLE STYLES
    ============================================ */
