@@ -1778,6 +1778,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --- Floating Buttons --- */
+@keyframes floatPulseGreen {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
 .whatsapp-float {
   position: fixed;
   bottom: 28px;
@@ -1794,11 +1800,19 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
   z-index: 8000;
   transition: all var(--transition);
+  animation: floatPulseGreen 2s infinite;
 }
 
 .whatsapp-float:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+  animation: none;
+}
+
+@keyframes floatPulseGold {
+  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
 }
 
 .phone-float {
@@ -1817,6 +1831,8 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 16px rgba(10, 25, 47, 0.4);
   z-index: 8000;
   transition: all var(--transition);
+  animation: floatPulseGold 2.2s infinite;
+  animation-delay: 0.5s;
 }
 
 .phone-float:hover {
@@ -1824,6 +1840,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-gold);
   color: var(--color-primary);
   box-shadow: 0 6px 24px rgba(212, 175, 55, 0.5);
+  animation: none;
 }
 
 .back-to-top {
