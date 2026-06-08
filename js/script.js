@@ -244,6 +244,10 @@ function injectSiteConfig() {
   Object.entries(socialLinks).forEach(([network, url]) => {
     document.querySelectorAll(`[data-social="${network}"]`).forEach((el) => {
       el.href = url;
+      if (url && url !== '#') {
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener noreferrer');
+      }
     });
   });
 
