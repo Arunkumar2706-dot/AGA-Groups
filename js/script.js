@@ -130,7 +130,7 @@ const PROJECTS_DATA = [
    THEME INITIALIZATION
    ============================================ */
 (function initTheme() {
-  const savedTheme = localStorage.getItem('aga_theme') || 'dark';
+  const savedTheme = localStorage.getItem('aga_theme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
 })();
 
