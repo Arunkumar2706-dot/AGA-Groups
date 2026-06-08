@@ -127,7 +127,7 @@
           <h2 class="section__title">Featured Projects</h2>
           <p class="section__subtitle">Explore some of our most celebrated construction achievements.</p>
         </div>
-        <div class="card-grid card-grid--3">
+        <div class="card-grid card-grid--3" id="projects-grid">
           <article class="project-card" data-aos="fade-up" data-aos-delay="100">
             <div class="project-card__image">
               <img src="images/projects/project-1.jpeg" alt="Skyline Residences" loading="lazy">
@@ -143,9 +143,60 @@
               <img src="images/projects/project-3.jpeg" alt="Luxury Villa Interior" loading="lazy">
             </div>
           </article>
+          <!-- Hidden Projects -->
+          <article class="project-card hidden-project" style="display: none;">
+            <div class="project-card__image">
+              <img src="images/projects/project-4.jpeg" alt="Modern Architecture" loading="lazy">
+            </div>
+          </article>
+          <article class="project-card hidden-project" style="display: none;">
+            <div class="project-card__image">
+              <img src="images/projects/project-5.jpeg" alt="Commercial Building" loading="lazy">
+            </div>
+          </article>
+          <article class="project-card hidden-project" style="display: none;">
+            <div class="project-card__image">
+              <img src="images/projects/project-6.jpeg" alt="Residential Complex" loading="lazy">
+            </div>
+          </article>
+          <article class="project-card hidden-project" style="display: none;">
+            <div class="project-card__image">
+              <img src="images/projects/project-7.jpeg" alt="Urban Planning" loading="lazy">
+            </div>
+          </article>
+          <article class="project-card hidden-project" style="display: none;">
+            <div class="project-card__image">
+              <img src="images/projects/project-8.jpeg" alt="Luxury Apartments" loading="lazy">
+            </div>
+          </article>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+          <button id="show-more-projects-btn" class="btn btn--outline">Show More</button>
         </div>
       </div>
     </section>
+
+    <!-- Script for Show More -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('show-more-projects-btn');
+        const hiddenProjects = document.querySelectorAll('.hidden-project');
+        
+        if(btn) {
+          btn.addEventListener('click', () => {
+            const isHidden = hiddenProjects[0].style.display === 'none';
+            hiddenProjects.forEach(project => {
+              project.style.display = isHidden ? 'block' : 'none';
+              if (isHidden) {
+                // Add fade-in effect when showing
+                project.style.animation = 'fadeIn 0.5s ease forwards';
+              }
+            });
+            btn.textContent = isHidden ? 'Show Less' : 'Show More';
+          });
+        }
+      });
+    </script>
 
     <!-- Real Estate -->
     <section class="section" style="padding-top: 40px;">
