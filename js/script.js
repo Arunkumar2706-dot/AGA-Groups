@@ -20,7 +20,7 @@ const SITE_CONFIG = {
   businessHours: 'Mon – Sat: 9:00 AM – 6:00 PM',
   social: {
     facebook: '#',
-    instagram: '#',
+    instagram: 'https://www.instagram.com/aga_groups_hosur?utm_source=qr&igsh=OW0waGs3a2N1dzFj',
     linkedin: '#',
     twitter: '#',
   },
