@@ -16,7 +16,7 @@
   <link rel="icon" href="images/logo.jpg.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -58,39 +58,52 @@
   <div id="nav-overlay" class="nav-overlay"></div>
 
   <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero__bg"></div>
-      <div class="hero__overlay"></div>
-      <div class="hero__content">
-        <span class="hero__label">Premium Construction</span>
-        <h1 class="hero__title" data-config="company">AGA Groups</h1>
-        <p class="hero__tagline" data-config="tagline">Building Excellence, Creating Landmarks</p>
-        <div class="hero__cta">
-          <a href="contact.html#quote" class="btn btn--primary">Get Free Quote</a>
-          <a href="projects.html" class="btn btn--outline">View Projects</a>
+    <!-- Hero Redesign: Structural Grid -->
+    <section class="hero-structural blueprint-bg">
+      <div class="hero-structural__grid container">
+        <div class="hero-structural__text">
+          <span class="technical-label">[ SEC-01 / FOUNDATION ]</span>
+          <h1 class="hero-structural__title">ENGINEERING<br>PRECISION.</h1>
+          <p class="hero-structural__desc">AGA Groups constructs premium residential and commercial environments with unyielding structural integrity and architectural vision.</p>
+          <div class="hero-structural__cta">
+            <a href="projects.html" class="btn-structural">Explore Projects</a>
+            <a href="contact.html" class="btn-structural btn-structural--alt">Initiate Contact</a>
+          </div>
         </div>
-      </div>
-      <a href="#intro" class="hero__scroll" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
-    </section>
-
-    <!-- Introduction -->
-    <section id="intro" class="section">
-      <div class="container">
-        <div class="intro">
-          <div class="intro__text" data-aos="fade-right">
-            <span class="section__label">Who We Are</span>
-            <h2 class="section__title">Crafting Spaces That Inspire</h2>
-            <p>AGA Groups is a trusted construction and real estate company offering construction services, residential plots, premium villas, and land development solutions. We are committed to quality, reliability, and creating communities that deliver lasting value for homeowners and investors.</p>
-            <div class="intro__features">
-              <div class="intro__feature"><i class="fas fa-check-circle"></i> Quality Assured</div>
-              <div class="intro__feature"><i class="fas fa-check-circle"></i> On-Time Delivery</div>
-              <div class="intro__feature"><i class="fas fa-check-circle"></i> Sustainable Build</div>
-              <div class="intro__feature"><i class="fas fa-check-circle"></i> Expert Team</div>
+        <div class="hero-structural__visual">
+          <div class="hero-image-module">
+            <img src="images/hero-bg.jpg" alt="Construction Precision" loading="lazy">
+            <div class="hero-image-overlay">
+              <span class="technical-label" style="color: white; margin-bottom: 0;">[ SCALE: 1:100 ]</span>
             </div>
           </div>
-          <div class="intro__image" data-aos="fade-left">
-            <img src="images/logo.jpg.png" alt="AGA Groups Logo" style="object-fit: contain; background-color: white; padding: 20px;" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Foundation Principles -->
+    <section id="intro" class="section">
+      <div class="container">
+        <div style="margin-bottom: 40px; border-bottom: var(--border-structural-dark); padding-bottom: 20px;">
+          <span class="technical-label">[ SEC-02 / ETHOS ]</span>
+          <h2 style="font-size: 2.5rem; text-transform: uppercase;">Foundation Principles</h2>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1px; background: var(--color-gray-200); border: var(--border-structural);">
+          <div class="structural-module">
+            <span class="technical-label">[ 01 ]</span>
+            <h3 style="margin-bottom: 16px; font-size: 1.5rem;">Structural Integrity</h3>
+            <p>Every project is engineered to withstand the test of time. We source premium materials and enforce strict quality control at every phase of assembly.</p>
+          </div>
+          <div class="structural-module">
+            <span class="technical-label">[ 02 ]</span>
+            <h3 style="margin-bottom: 16px; font-size: 1.5rem;">Architectural Vision</h3>
+            <p>Form follows function. Our designs balance aesthetic brilliance with practical utility, creating spaces that inspire and perform.</p>
+          </div>
+          <div class="structural-module">
+            <span class="technical-label">[ 03 ]</span>
+            <h3 style="margin-bottom: 16px; font-size: 1.5rem;">Precision Delivery</h3>
+            <p>Time is a critical metric. Our project management systems ensure milestones are met with exactitude, delivering projects on schedule.</p>
           </div>
         </div>
       </div>

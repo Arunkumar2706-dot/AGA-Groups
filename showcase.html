@@ -13,7 +13,7 @@
   <link rel="icon" href="images/logo.jpg.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="stylesheet" href="css/style.css">
@@ -57,47 +57,32 @@
       </div>
     </section>
 
-    <section class="section section--dark">
-      <div class="container">
-        <div class="section__header" data-aos="fade-up">
-          <span class="section__label">Virtual Experience</span>
-          <h2 class="section__title">Interactive Building Model</h2>
-          <p class="section__subtitle">Explore our architectural vision in an immersive 3D environment.</p>
+    <section class="section blueprint-bg" style="min-height: calc(100vh - var(--nav-height)); display: flex; flex-direction: column; padding: 0;">
+      <div style="flex: 1; position: relative; border-bottom: var(--border-structural-dark); overflow: hidden;">
+        <!-- Canvas Container -->
+        <div id="showcase-canvas" style="position: absolute; inset: 0; width: 100%; height: 100%; background: var(--color-surface-dark);">
+          <div id="showcase-loading" class="showcase-loading">
+            <div class="showcase-loading__spinner"></div>
+          </div>
         </div>
-
-        <div class="showcase-wrapper" data-aos="fade-up">
-          <div id="showcase-canvas" class="showcase-canvas">
-            <div id="showcase-loading" class="showcase-loading">
-              <div class="showcase-loading__spinner"></div>
-            </div>
-          </div>
-          <div class="showcase-info">
-            <h3 class="showcase-info__title">Commercial Tower Concept</h3>
-            <p class="showcase-info__text">Experience a virtual walkthrough of our signature commercial building design. This interactive 3D model showcases our commitment to modern architecture and engineering excellence.</p>
-            <div class="showcase-info__controls">
-              <div class="showcase-info__control">
-                <i class="fas fa-mouse"></i>
-                <span>Drag to rotate the building</span>
-              </div>
-              <div class="showcase-info__control">
-                <i class="fas fa-search-plus"></i>
-                <span>Scroll to zoom in and out</span>
-              </div>
-              <div class="showcase-info__control">
-                <i class="fas fa-sync-alt"></i>
-                <span>Auto-rotates when idle</span>
-              </div>
-              <div class="showcase-info__control">
-                <i class="fas fa-lightbulb"></i>
-                <span>Animated window lighting</span>
-              </div>
-            </div>
-            <a href="contact.html" class="btn btn--primary" style="margin-top:28px">Start Your Project</a>
-          </div>
+        
+        <!-- Overlay HUD -->
+        <div style="position: absolute; top: 40px; left: 40px; pointer-events: none;">
+          <span class="technical-label" style="color: var(--color-white); background: rgba(0,0,0,0.5); padding: 4px 8px;">[ VIRTUAL EXPERIENCE ]</span>
+          <h2 style="font-family: var(--font-heading); font-size: 3rem; color: var(--color-white); margin-top: 10px; text-transform: uppercase; line-height: 1;">Interactive<br>Building<br>Model</h2>
+        </div>
+        
+        <div style="position: absolute; bottom: 40px; right: 40px; width: 320px; background: rgba(22, 22, 22, 0.9); border: 1px solid rgba(255,255,255,0.1); padding: 24px; color: var(--color-white);">
+          <h3 style="font-size: 1.2rem; margin-bottom: 12px; font-family: var(--font-mono); text-transform: uppercase;">System Controls</h3>
+          <ul style="list-style: none; padding: 0; font-size: 0.85rem; color: rgba(255,255,255,0.7); display: flex; flex-direction: column; gap: 12px;">
+            <li style="display: flex; gap: 12px; align-items: center;"><i class="fas fa-mouse" style="color: var(--color-accent-primary);"></i> Drag to rotate</li>
+            <li style="display: flex; gap: 12px; align-items: center;"><i class="fas fa-search-plus" style="color: var(--color-accent-primary);"></i> Scroll to zoom</li>
+            <li style="display: flex; gap: 12px; align-items: center;"><i class="fas fa-sync-alt" style="color: var(--color-accent-primary);"></i> Auto-rotates</li>
+            <li style="display: flex; gap: 12px; align-items: center;"><i class="fas fa-lightbulb" style="color: var(--color-accent-primary);"></i> Dynamic lighting</li>
+          </ul>
         </div>
       </div>
     </section>
-    
   </main>
 
   <footer class="footer">
